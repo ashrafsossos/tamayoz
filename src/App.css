@@ -1,0 +1,312 @@
+html {
+  scroll-behavior: smooth;
+}
+
+.error {
+  border-color: red;
+}
+
+.ip__worm1,
+.ip__worm2 {
+  -webkit-animation: worm1 2s linear infinite;
+  animation: worm1 2s linear infinite;
+}
+.ip__worm2 {
+  -webkit-animation-name: worm2;
+  animation-name: worm2;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: hsl(var(--hue), 90%, 5%);
+    --fg: hsl(var(--hue), 90%, 95%);
+  }
+  .ip__track {
+    stroke: hsl(var(--hue), 90%, 15%);
+  }
+}
+
+/* Animation */
+@-webkit-keyframes worm1 {
+  from {
+    stroke-dashoffset: 0;
+  }
+  50% {
+    -webkit-animation-timing-function: steps(1);
+    animation-timing-function: steps(1);
+    stroke-dashoffset: -358;
+  }
+  50.01% {
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    stroke-dashoffset: 358;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes worm1 {
+  from {
+    stroke-dashoffset: 0;
+  }
+  50% {
+    -webkit-animation-timing-function: steps(1);
+    animation-timing-function: steps(1);
+    stroke-dashoffset: -358;
+  }
+  50.01% {
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    stroke-dashoffset: 358;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@-webkit-keyframes worm2 {
+  from {
+    stroke-dashoffset: 358;
+  }
+  50% {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: -358;
+  }
+}
+@keyframes worm2 {
+  from {
+    stroke-dashoffset: 358;
+  }
+  50% {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: -358;
+  }
+}
+
+/* Cloader */
+.preloader-1 {
+  width: 200px;
+  height: 200px;
+  font-size: 16px;
+}
+.preloader-1 .line {
+  width: 10px;
+  height: 12px;
+  background: #00797c;
+  margin: 0 1px;
+  display: inline-block;
+  -webkit-animation: opacity-1 1000ms infinite ease-in-out;
+  animation: opacity-1 1000ms infinite ease-in-out;
+}
+
+.preloader-1 .line-1 {
+  -webkit-animation-delay: 800ms;
+  animation-delay: 800ms;
+}
+.preloader-1 .line-2 {
+  -webkit-animation-delay: 600ms;
+  animation-delay: 600ms;
+}
+.preloader-1 .line-3 {
+  -webkit-animation-delay: 400ms;
+  animation-delay: 400ms;
+}
+.preloader-1 .line-4 {
+  -webkit-animation-delay: 200ms;
+  animation-delay: 200ms;
+}
+.preloader-1 .line-6 {
+  -webkit-animation-delay: 200ms;
+  animation-delay: 200ms;
+}
+.preloader-1 .line-7 {
+  -webkit-animation-delay: 400ms;
+  animation-delay: 400ms;
+}
+.preloader-1 .line-8 {
+  -webkit-animation-delay: 600ms;
+  animation-delay: 600ms;
+}
+.preloader-1 .line-9 {
+  -webkit-animation-delay: 800ms;
+  animation-delay: 800ms;
+}
+
+@-webkit-keyframes opacity-1 {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes opacity-1 {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes opacity-2 {
+  0% {
+    opacity: 1;
+    height: 15px;
+  }
+  50% {
+    opacity: 0;
+    height: 12px;
+  }
+  100% {
+    opacity: 1;
+    height: 15px;
+  }
+}
+
+@keyframes opacity-2 {
+  0% {
+    opacity: 1;
+    height: 15px;
+  }
+  50% {
+    opacity: 0;
+    height: 12px;
+  }
+  100% {
+    opacity: 1;
+    height: 15px;
+  }
+}
+
+/* paper */
+
+.paper {
+  color: white;
+  --paper-dark: #00797c;
+  --paper-color: rgba(0, 155, 158, 0.714);
+  font-size: 30px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 400px;
+  height: 200px;
+  background: linear-gradient(
+    135deg,
+    var(--paper-dark),
+    30%,
+    var(--paper-color)
+  );
+  box-shadow: 3px 3px 2px var(--paper-shadow);
+  transform: rotate(10deg);
+  transform-origin: top left;
+  margin-top: 40px;
+}
+
+.paper p {
+  margin: auto;
+}
+
+.pin {
+  --pin-color: #2d1332;
+  --pin-dark: #2d1332e3;
+  --pin-light: #a479ad;
+
+  position: absolute;
+  left: 20px;
+  width: 60px;
+  height: 50px;
+}
+
+.shadow {
+  position: absolute;
+  top: 18px;
+  left: -8px;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background: radial-gradient(var(--paper-shadow), 20%, rgba(201, 191, 141, 0));
+}
+
+.metal {
+  position: absolute;
+  width: 5px;
+  height: 20px;
+  background: linear-gradient(to right, #808080, 40%, #eae8e8, 50%, #808080);
+  border-radius: 0 0 30% 30%;
+  transform: rotate(50deg);
+  transform-origin: bottom left;
+  top: 17px;
+  border-bottom: 1px solid #808080;
+  right: 60px;
+}
+
+.bottom-circle {
+  position: absolute;
+  right: 15px;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: var(--pin-color);
+  background: radial-gradient(
+    circle at bottom right,
+    var(--pin-light),
+    25%,
+    var(--pin-dark),
+    90%,
+    var(--pin-color)
+  );
+}
+
+/* Barrel */
+.bottom-circle::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -2px;
+  width: 20px;
+  height: 30px;
+  transform: rotate(55deg);
+  transform-origin: 100% 100%;
+  border-radius: 0 0 40% 40%;
+  background: linear-gradient(
+    to right,
+    var(--pin-dark),
+    30%,
+    var(--pin-color),
+    90%,
+    var(--pin-light)
+  );
+}
+
+/* Top circle */
+.bottom-circle::after {
+  content: "";
+  position: absolute;
+  right: -10px;
+  top: -5px;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at right,
+    var(--pin-light),
+    30%,
+    var(--pin-color),
+    var(--pin-dark) 80%
+  );
+}
+
+.PhoneInputInput {
+  height: 30px;
+}
